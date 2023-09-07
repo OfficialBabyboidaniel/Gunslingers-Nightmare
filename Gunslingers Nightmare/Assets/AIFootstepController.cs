@@ -29,11 +29,10 @@ public class AIFootstepController : MonoBehaviour
         footstepAudioSource.panStereo = panStereo;
 
         // Calculate the volume based on the distance (closer = louder, farther = quieter)
-        float volume = 100f - (directionToPlayer.magnitude / maxDistance);
+        float volume = 1f - (directionToPlayer.magnitude / maxDistance);
 
         // Clamp the volume to be between 0 and 1
-        
-        audioMixer.SetFloat("Master", volume);
+        volume = Mathf.Clamp01(volume);
 
         // Set the volume of the enemy's footsteps
         footstepAudioSource.volume = volume;
