@@ -22,9 +22,16 @@ public class BulletScript : MonoBehaviour
         transform.rotation = Quaternion.Euler(0, 0, rot + 90);
     }
 
-    void OnCollisionEnter2D(Collision2D col)
+    private void OnCollisionEnter2D(Collision2D collision)
     {
         Debug.Log("OnCollisionEnter2D");
         Destroy(gameObject);
+
+        if (collision.gameObject.tag == "Enemy")
+        {
+
+            Destroy(collision.gameObject);
+        }
     }
+
 }
