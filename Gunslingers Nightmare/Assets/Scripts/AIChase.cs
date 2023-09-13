@@ -31,13 +31,19 @@ public class AIChase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (distance <= hitRange && timeSinceLastAttack >= attackCooldown)
+        if (distance <= hitRange)
         {
-            CanMove = false;
-            DoDamage();
-            timeSinceLastAttack = 0f;
-            canAttack = false;
-        } else{
+            if (timeSinceLastAttack >= attackCooldown)
+            {
+                CanMove = false;
+                DoDamage();
+                timeSinceLastAttack = 0f;
+                canAttack = false;
+            }
+
+        }
+        else
+        {
             CanMove = true;
         }
 
