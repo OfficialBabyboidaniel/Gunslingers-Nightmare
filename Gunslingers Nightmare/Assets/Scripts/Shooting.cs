@@ -52,10 +52,10 @@ public class Shooting : MonoBehaviour
         // för mus n keyboard
         else if (Mouse.current.position.ReadValue() != lastMpositoin || Input.GetMouseButton(0))
         {
-            Debug.Log(Mouse.current.position.ReadValue().magnitude);
+            // Debug.Log(Mouse.current.position.ReadValue().magnitude);
             mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
 
-            Debug.Log(mainCam.ScreenToWorldPoint(Input.mousePosition));
+            // Debug.Log(mainCam.ScreenToWorldPoint(Input.mousePosition));
 
             Vector3 rotation = mousePos - transform.position;
 

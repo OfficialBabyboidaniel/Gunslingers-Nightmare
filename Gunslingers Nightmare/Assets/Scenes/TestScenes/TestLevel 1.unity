@@ -123,11 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
---- !u!1 &34036341 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4670192440724392748, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
-  m_PrefabInstance: {fileID: 1310007911}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &183454208
 GameObject:
   m_ObjectHideFlags: 0
@@ -871,10 +866,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 4670192439488620272, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
-      propertyPath: m_Constraints
-      value: 4
-      objectReference: {fileID: 0}
     - target: {fileID: 4670192439488620274, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -922,14 +913,6 @@ PrefabInstance:
     - target: {fileID: 4670192439488620284, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
       propertyPath: m_Name
       value: Player
-      objectReference: {fileID: 0}
-    - target: {fileID: 4670192440724392738, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
-      propertyPath: rotatePoint
-      value: 
-      objectReference: {fileID: 34036341}
-    - target: {fileID: 4670192440724392748, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
-      propertyPath: m_TagString
-      value: RotatePoint
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
@@ -1054,32 +1037,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4670192439488620274, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
   m_PrefabInstance: {fileID: 1310007911}
   m_PrefabAsset: {fileID: 0}
---- !u!61 &1576116073
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1576116064}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
-    newSize: {x: 1, y: 1}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
-  m_EdgeRadius: 0
 --- !u!1 &1733908525
 GameObject:
   m_ObjectHideFlags: 0
