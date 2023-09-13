@@ -22,8 +22,6 @@ public class Shooting : MonoBehaviour
     public float timeBetweenFiring;
     private Vector2 lastMpositoin;
 
-    private int FiredShots = 0;
-
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -41,7 +39,7 @@ public class Shooting : MonoBehaviour
             Vector3 ControllerPos = Gamepad.all[0].rightStick.value;
             float ControtZ = Mathf.Atan2(ControllerPos.y, ControllerPos.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, ControtZ);
-            Debug.Log("Controller rotation (rightstick movement) at: " + ControllerPos);
+
             // sätta muspekaren på rotate point, gick sådär haha gjorde en annan lösning men lite fulare då muspekaren inte följer med controller input
             // Vector3 screenPos = mainCam.WorldToScreenPoint(transform.position);
 
@@ -54,8 +52,10 @@ public class Shooting : MonoBehaviour
         // för mus n keyboard
         else if (Mouse.current.position.ReadValue() != lastMpositoin || Input.GetMouseButton(0))
         {
+            // Debug.Log(Mouse.current.position.ReadValue().magnitude);
             mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
-            Debug.Log("Mouse Position at: " +mainCam.ScreenToWorldPoint(Input.mousePosition));
+
+            // Debug.Log(mainCam.ScreenToWorldPoint(Input.mousePosition));
 
             Vector3 rotation = mousePos - transform.position;
 
@@ -64,14 +64,11 @@ public class Shooting : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, rotZ);
         }
 
-        if (((Gamepad.all.Count > 0 && Gamepad.all[0].rightTrigger.IsPressed()) || Input.GetMouseButton(0)) && canFire)
+        if (( (Gamepad.all.Count > 0 && Gamepad.all[0].rightTrigger.IsPressed()) || Input.GetMouseButton(0)) && canFire)
         {
-            FiredShots++;
-            Debug.Log("Player has sucessfully shot, Count: " + FiredShots);
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
         }
-
         //Shoot cooldown
         if (!canFire)
         {
