@@ -34,8 +34,6 @@ public class PlayerStats : MonoBehaviour
 
             Time.timeScale = 0f;
             
-
-            
             isNotDead = true;
         }
     }
