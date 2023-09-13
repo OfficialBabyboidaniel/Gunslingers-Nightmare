@@ -9,6 +9,8 @@ public class Death : MonoBehaviour
     public AudioClip DeathClip;
 
     public AudioSource audioSource;
+    public Transform player; // Reference to the player character
+    public float maxDistance = 30f; // The maximum distance at which footsteps can be heard
     void Start()
     {
 
@@ -25,6 +27,18 @@ public class Death : MonoBehaviour
         if (col.gameObject.CompareTag("Bullet"))
         {
             // Play the sound effect
+            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+
+            // Calculate the volume based on the distance (closer = louder, farther = quieter)
+            float volume = 1f - (distanceToPlayer / maxDistance);
+
+            // Clamp the volume to be between 0 and 1
+            volume = Mathf.Clamp01(volume);
+
+            // Set the volume of the enemy's footsteps
+            audioSource.volume = volume;
+
+            // You can also play the footstep sound here if it's not already playing
             audioSource.PlayOneShot(DeathClip);
 
             // Disable the renderer to make the enemy invisible
