@@ -24,6 +24,7 @@ public class Death : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D col)
     {
+        Debug.Log(col.gameObject.name);
         if (col.gameObject.CompareTag("Bullet"))
         {
             // Play the sound effect
@@ -33,7 +34,7 @@ public class Death : MonoBehaviour
             float volume = 1f - (distanceToPlayer / maxDistance);
 
             // Clamp the volume to be between 0 and 1
-            volume = Mathf.Clamp01(volume);
+            volume = Mathf.Clamp(volume, 0, 0.3f);
 
             // Set the volume of the enemy's footsteps
             audioSource.volume = volume;
@@ -46,6 +47,17 @@ public class Death : MonoBehaviour
             if (renderer != null)
             {
                 renderer.enabled = false;
+            }
+            AIChase movementScript = GetComponent<AIChase>();
+            if (movementScript != null)
+            {
+                movementScript.CanMove = false;
+            }
+
+            SoundController footsteps = GetComponent<SoundController>();
+            if (footsteps != null)
+            {
+                footsteps.isDead = true;
             }
 
             // Optionally, you can disable other components like Collider
