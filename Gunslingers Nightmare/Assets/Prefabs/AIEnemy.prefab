@@ -63,8 +63,8 @@ MonoBehaviour:
   attackCooldown: 3
   timeSinceLastAttack: 0
   hitRange: 1.3
-  AudioSource: {fileID: 0}
-  audioClip: {fileID: 0}
+  AudioSource: {fileID: 2099606839}
+  audioClip: {fileID: 8300000, guid: f9d41c29c02d69447a42e5461ca68dbf, type: 3}
 --- !u!212 &3347991149010723797
 SpriteRenderer:
   m_ObjectHideFlags: 0
