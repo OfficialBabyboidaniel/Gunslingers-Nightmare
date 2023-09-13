@@ -11,6 +11,7 @@ public class BulletScript : MonoBehaviour
     private Camera mainCam;
     private Rigidbody2D rb;
     public float force;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -19,7 +20,7 @@ public class BulletScript : MonoBehaviour
 
         //för controller
         GameObject RotatePoint = GameObject.FindGameObjectWithTag("RotatePoint");
-        if (Gamepad.all[0].rightTrigger.IsPressed())
+        if ( Gamepad.all.Count > 0 && Gamepad.all[0].rightTrigger.IsPressed())
         {
             Vector3 ControllerPos = Gamepad.all[0].rightStick.value;
             if (!Gamepad.all[0].rightStick.IsPressed())
@@ -35,9 +36,7 @@ public class BulletScript : MonoBehaviour
             else
             {
                 rb.velocity = new Vector2(ControllerPos.x, ControllerPos.y).normalized * force;
-
             }
-           
         }
         //för mus
         else
