@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Runtime.InteropServices;
+using Unity.VisualScripting;
 
 
 
@@ -19,7 +20,6 @@ public class Shooting : MonoBehaviour
     public bool canFire;
     private float timer;
     public float timeBetweenFiring;
-
     private Vector2 lastMpositoin;
 
     void Start()
@@ -31,10 +31,10 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+
 
         // för controller
-        if (Gamepad.all[0].rightStick.IsPressed())
+        if (Gamepad.all.Count > 0 && Gamepad.all[0].rightStick.IsPressed())
         {
             Vector3 ControllerPos = Gamepad.all[0].rightStick.value;
             float ControtZ = Mathf.Atan2(ControllerPos.y, ControllerPos.x) * Mathf.Rad2Deg;
@@ -50,7 +50,7 @@ public class Shooting : MonoBehaviour
             // Input.mousePosition.Set(0, 0, 0);
         }
         // för mus n keyboard
-        else if (Mouse.current.position.ReadValue() != lastMpositoin || Input.GetMouseButton(0)  )
+        else if (Mouse.current.position.ReadValue() != lastMpositoin || Input.GetMouseButton(0))
         {
             Debug.Log(Mouse.current.position.ReadValue().magnitude);
             mousePos = mainCam.ScreenToWorldPoint(Input.mousePosition);
@@ -64,7 +64,7 @@ public class Shooting : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, rotZ);
         }
 
-        if ((Gamepad.all[0].rightTrigger.IsPressed() || Input.GetMouseButton(0)) && canFire)
+        if (( (Gamepad.all.Count > 0 && Gamepad.all[0].rightTrigger.IsPressed()) || Input.GetMouseButton(0)) && canFire)
         {
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
@@ -79,7 +79,7 @@ public class Shooting : MonoBehaviour
                 timer = 0;
             }
         }
-        
+
         lastMpositoin = Mouse.current.position.ReadValue();
 
     }
