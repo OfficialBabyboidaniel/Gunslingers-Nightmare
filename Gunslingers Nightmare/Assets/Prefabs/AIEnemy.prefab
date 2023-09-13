@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 3347991149010723803}
   - component: {fileID: 3347991149010723797}
   - component: {fileID: 3347991149010723796}
-  - component: {fileID: 3347991149010723799}
+  - component: {fileID: 6903801491046662623}
+  - component: {fileID: 23546745}
   m_Layer: 0
   m_Name: AIEnemy
   m_TagString: Enemy
@@ -29,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 3347991149010723800}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.92, y: -4.55, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 5.191491, y: 5.191491, z: 5.191491}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -124,7 +125,7 @@ AudioSource:
   MinDistance: 1
   MaxDistance: 500
   Pan2D: 0
-  rolloffMode: 0
+  rolloffMode: 1
   BypassEffects: 0
   BypassListenerEffects: 0
   BypassReverbZones: 0
@@ -197,7 +198,7 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
---- !u!114 &3347991149010723799
+--- !u!114 &6903801491046662623
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -206,10 +207,25 @@ MonoBehaviour:
   m_GameObject: {fileID: 3347991149010723800}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 493c11ba7f8f1b84db6c5956577b1323, type: 3}
+  m_Script: {fileID: 11500000, guid: 62c39396f0cbb1b4ab6dce7c10df081b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 0}
   maxDistance: 10
   footstepAudioSource: {fileID: 3347991149010723796}
-  audioMixer: {fileID: 24100000, guid: 58ec3a08434641a48b50a273cb854d19, type: 2}
+--- !u!114 &23546745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3347991149010723800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3dcfb6b8a12430644b6508041d425675, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  DeathClip: {fileID: 8300000, guid: b52dc91c484582146b96ff68867c5f09, type: 3}
+  audioSource: {fileID: 3347991149010723796}
+  player: {fileID: 0}
+  maxDistance: 30
