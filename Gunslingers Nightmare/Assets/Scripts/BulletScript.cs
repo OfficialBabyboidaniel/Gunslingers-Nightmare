@@ -25,7 +25,6 @@ public class BulletScript : MonoBehaviour
             Vector3 ControllerPos = Gamepad.all[0].rightStick.value;
             if (!Gamepad.all[0].rightStick.IsPressed())
             {
-                Debug.Log("right stick not being triggered when shooting");
                 Vector3 direction = RotatePoint.transform.position - transform.position;
                 Vector3 rotation = transform.position - RotatePoint.transform.position;
                 rb.velocity = new Vector2(-direction.x, -direction.y).normalized * force;
