@@ -11,6 +11,8 @@ public class PlayerStats : MonoBehaviour
     public AudioClip DeathClip;
 
     public AudioSource audioSource;
+
+    private bool isNotDead = false;
     void Start()
     {
 
@@ -20,7 +22,7 @@ public class PlayerStats : MonoBehaviour
     void Update()
     {
         Debug.Log(playerHP);
-        if (playerHP <= 0)
+        if (playerHP <= 0 && !isNotDead )
         {
             audioSource.PlayOneShot(DeathClip);
             Renderer renderer = GetComponent<Renderer>();
@@ -30,9 +32,10 @@ public class PlayerStats : MonoBehaviour
             }
 
             Destroy(gameObject, DeathClip.length);
-            
-            Time.timeScale = 0f;
 
+            Time.timeScale = 0f;
+            
+            isNotDead = true;
         }
     }
 }
