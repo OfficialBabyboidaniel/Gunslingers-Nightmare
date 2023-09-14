@@ -7,17 +7,22 @@ public class Ladder : MonoBehaviour
 {
 
     public bool keyFound;
+    private AudioSource source;
 
     // Start is called before the first frame update
     void Start()
     {
         keyFound = false;
+        source = gameObject.GetComponent<AudioSource>();
+        source.mute = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+        if (keyFound) {
+            source.mute = false;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D col)

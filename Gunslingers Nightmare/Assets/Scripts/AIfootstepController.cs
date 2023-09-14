@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SoundController : MonoBehaviour
+public class AIFootstepController : MonoBehaviour
 {
     // Start is called before the first frame update
     public Transform player; // Reference to the player character
@@ -18,7 +18,7 @@ public class SoundController : MonoBehaviour
         float volume = 1f - (distanceToPlayer / maxDistance);
 
         // Clamp the volume to be between 0 and 1
-        volume = Mathf.Clamp01(volume);
+        volume = Mathf.Clamp(volume, 0, 0.3f);
 
         // Set the volume of the enemy's footsteps
         footstepAudioSource.volume = volume;
