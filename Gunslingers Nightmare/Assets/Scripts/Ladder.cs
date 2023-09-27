@@ -29,7 +29,7 @@ public class Ladder : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player") && keyFound) {
             Debug.Log("Ladder");
-            SceneManager.LoadScene("Level1");
+            SceneManager.LoadScene("Level2");
         }
     }
 }
