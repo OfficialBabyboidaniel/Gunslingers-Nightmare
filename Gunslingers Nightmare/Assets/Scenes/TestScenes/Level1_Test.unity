@@ -144,11 +144,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347991149010723802, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -2.28
+      value: -9.74
       objectReference: {fileID: 0}
     - target: {fileID: 3347991149010723802, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.34
+      value: 2.86
       objectReference: {fileID: 0}
     - target: {fileID: 3347991149010723802, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
       propertyPath: m_LocalPosition.z
@@ -205,7 +205,7 @@ GameObject:
   - component: {fileID: 126649370}
   m_Layer: 0
   m_Name: Square (5)
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -316,7 +316,7 @@ GameObject:
   - component: {fileID: 169658466}
   m_Layer: 0
   m_Name: Square (1)
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -477,7 +477,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 183454208}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.58, y: -6.23, z: -10}
+  m_LocalPosition: {x: -9.78, y: -6.58, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -555,7 +555,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 209045099}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -9.58, y: -6.23, z: -10}
+  m_LocalPosition: {x: -9.78, y: -6.58, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -642,7 +642,7 @@ GameObject:
   - component: {fileID: 357388169}
   m_Layer: 0
   m_Name: Square (4)
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -753,7 +753,7 @@ GameObject:
   - component: {fileID: 621976641}
   m_Layer: 0
   m_Name: Square (3)
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -931,7 +931,7 @@ GameObject:
   - component: {fileID: 755769396}
   m_Layer: 0
   m_Name: Walls
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -970,11 +970,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4670192439488620274, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -9.58
+      value: -9.78
       objectReference: {fileID: 0}
     - target: {fileID: 4670192439488620274, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -6.23
+      value: -6.58
       objectReference: {fileID: 0}
     - target: {fileID: 4670192439488620274, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
       propertyPath: m_LocalPosition.z
@@ -1276,7 +1276,7 @@ GameObject:
   - component: {fileID: 1767058712}
   m_Layer: 0
   m_Name: Square (2)
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1823,8 +1823,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78bfc3d0f480e1543b1c8d3ff84e2aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 1576116064}
-  pickUpSound: {fileID: 8300000, guid: 7fadc83e662927b45852a503372e2501, type: 3}
 --- !u!82 &1936990219
 AudioSource:
   m_ObjectHideFlags: 0
@@ -1995,7 +1993,7 @@ GameObject:
   - component: {fileID: 1976737749}
   m_Layer: 0
   m_Name: Square
-  m_TagString: Wall
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
