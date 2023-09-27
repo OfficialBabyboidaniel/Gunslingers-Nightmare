@@ -52,6 +52,7 @@ public class Death : MonoBehaviour
             if (movementScript != null)
             {
                 movementScript.CanMove = false;
+                
             }
 
             SoundController footsteps = GetComponent<SoundController>();
