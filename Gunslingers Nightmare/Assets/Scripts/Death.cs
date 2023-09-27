@@ -10,10 +10,16 @@ public class Death : MonoBehaviour
 
     public AudioSource audioSource;
     public Transform player; // Reference to the player character
-    public float maxDistance = 30f; // The maximum distance at which footsteps can be heard
+
+    AIChase ChaseScript; 
+    private float maxDistance; // The maximum distance at which footsteps can be heard
+
+    private bool isDead = false;
+
     void Start()
     {
-
+        ChaseScript = gameObject.GetComponent<AIChase>();
+        maxDistance = ChaseScript.MaxSightRange;
     }
 
     // Update is called once per frame
@@ -25,8 +31,9 @@ public class Death : MonoBehaviour
     void OnCollisionEnter2D(Collision2D col)
     {
         Debug.Log(col.gameObject.name);
-        if (col.gameObject.CompareTag("Bullet"))
+        if (col.gameObject.CompareTag("Bullet") && !isDead )
         {
+            isDead = true;
             // Play the sound effect
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
@@ -34,10 +41,12 @@ public class Death : MonoBehaviour
             float volume = 1f - (distanceToPlayer / maxDistance);
 
             // Clamp the volume to be between 0 and 1
-            volume = Mathf.Clamp(volume, 0, 0.3f);
+            volume = Mathf.Clamp(volume, 0, 0.4f);
 
             // Set the volume of the enemy's footsteps
             audioSource.volume = volume;
+
+            Debug.Log(volume);
 
             // You can also play the footstep sound here if it's not already playing
             audioSource.PlayOneShot(DeathClip);
@@ -52,6 +61,7 @@ public class Death : MonoBehaviour
             if (movementScript != null)
             {
                 movementScript.CanMove = false;
+
             }
 
             SoundController footsteps = GetComponent<SoundController>();

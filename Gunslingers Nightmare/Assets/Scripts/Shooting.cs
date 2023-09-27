@@ -22,6 +22,8 @@ public class Shooting : MonoBehaviour
     public float timeBetweenFiring;
     private Vector2 lastMpositoin;
 
+
+
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
@@ -64,7 +66,7 @@ public class Shooting : MonoBehaviour
             transform.rotation = Quaternion.Euler(0, 0, rotZ);
         }
 
-        if (( (Gamepad.all.Count > 0 && Gamepad.all[0].rightTrigger.IsPressed()) || Input.GetMouseButton(0)) && canFire)
+        if (((Gamepad.all.Count > 0 && Gamepad.all[0].rightTrigger.IsPressed()) || Input.GetMouseButton(0)) && canFire)
         {
             canFire = false;
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
@@ -79,8 +81,6 @@ public class Shooting : MonoBehaviour
                 timer = 0;
             }
         }
-
         lastMpositoin = Mouse.current.position.ReadValue();
-
     }
 }
