@@ -9,6 +9,7 @@ public class AIFootstepController : MonoBehaviour
     public float maxDistance = 10f; // The maximum distance at which footsteps can be heard
     public AudioSource footstepAudioSource; // Reference to the AudioSource on the enemy
 
+
     private void Update()
     {
         // Calculate the distance between the enemy and the player
