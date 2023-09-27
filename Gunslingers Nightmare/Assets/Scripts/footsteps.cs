@@ -50,7 +50,9 @@ public class footsteps : MonoBehaviour
         int randomIndex = Random.Range(0, clips.Count);
         AudioClip randomClip = clips[randomIndex];
         source.clip = randomClip;
-        source.Play();
+        if (source.enabled) {
+            source.Play();
+        }
         playNextClip = false;
     }
 }
