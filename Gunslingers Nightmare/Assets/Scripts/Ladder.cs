@@ -20,16 +20,22 @@ public class Ladder : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (keyFound) {
+        if (keyFound)
+        {
             source.mute = false;
         }
     }
 
     void OnTriggerEnter2D(Collider2D col)
     {
-        if (col.gameObject.CompareTag("Player") && keyFound) {
+        if (col.gameObject.CompareTag("Player") && keyFound)
+        {
             Debug.Log("Ladder");
-            SceneManager.LoadScene("Level2");
+            if (SceneManager.GetActiveScene().buildIndex + 1 == 3)
+            {
+                SceneManager.LoadScene(0);
+            }
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
