@@ -8,6 +8,7 @@ public class AIChase : MonoBehaviour
     public float speed;
     private float distance;
 
+    public float MaxSightRange = 10.0f;
     public bool CanMove = true;
 
     public int HitDamage = 4;
@@ -16,7 +17,7 @@ public class AIChase : MonoBehaviour
     public float attackCooldown = 3f; // Cooldown time in seconds
     public float timeSinceLastAttack = 0f;
 
-    public float hitRange = 4.8f;
+    public float hitRange = 1.0f;
 
     public AudioSource AudioSource;
 
@@ -31,37 +32,38 @@ public class AIChase : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (distance <= hitRange)
+        distance = Vector2.Distance(transform.position, player.transform.position);
+
+        if (distance <= MaxSightRange)
         {
-            if (timeSinceLastAttack >= attackCooldown)
+            if (distance <= hitRange)
             {
-                CanMove = false;
-                DoDamage();
-                timeSinceLastAttack = 0f;
-                canAttack = false;
+                if (timeSinceLastAttack >= attackCooldown)
+                {
+                    CanMove = false;
+                    DoDamage();
+                    timeSinceLastAttack = 0f;
+                    canAttack = false;
+                }
+            }
+            else
+            {
+                CanMove = true;
             }
 
+            if (CanMove)
+            {
+                Vector2 direction = player.transform.position - transform.position;
+                transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
+            }
         }
         else
         {
-            CanMove = true;
-        }
-
-        if (CanMove)
-        {
-            distance = Vector2.Distance(transform.position, player.transform.position);
-            Vector2 direction = player.transform.position - transform.position;
-            transform.position = Vector2.MoveTowards(this.transform.position, player.transform.position, speed * Time.deltaTime);
-
+            CanMove = false; // Enemy stops moving when player is out of sight range
         }
 
         // Update the timer
         timeSinceLastAttack += Time.deltaTime;
-
-        // Check if the cooldown period has passe
-
-
-
     }
 
     void DoDamage()
