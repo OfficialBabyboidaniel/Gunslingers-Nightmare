@@ -23,10 +23,12 @@ public class AIChase : MonoBehaviour
 
     public AudioClip audioClip;
 
+    bool hasHitWall;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+
     }
 
     // Update is called once per frame
@@ -34,7 +36,20 @@ public class AIChase : MonoBehaviour
     {
         distance = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distance <= MaxSightRange)
+        //måste kollas igenom
+
+        // RaycastHit2D hit = Physics2D.Linecast(transform.position, player.transform.position, LayerMask.GetMask("Wall"));
+
+        // if (hit.collider == null)
+        // {
+        //     hasHitWall = false; // Set the flag to true if no wall is in the way
+        // }
+        // else
+        // {
+        //     hasHitWall = true;
+        // }
+
+        if (distance <= MaxSightRange && !hasHitWall)
         {
             if (distance <= hitRange)
             {
