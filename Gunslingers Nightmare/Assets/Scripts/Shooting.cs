@@ -23,13 +23,11 @@ public class Shooting : MonoBehaviour
     private Vector2 lastMpositoin;
 
 
-    private CustomLoggerScript customLogger;
+
     void Start()
     {
         mainCam = GameObject.FindGameObjectWithTag("MainCamera").GetComponent<Camera>();
         lastMpositoin = Mouse.current.position.ReadValue();
-        customLogger = FindObjectOfType<CustomLoggerScript>();
-
     }
 
     // Update is called once per frame
@@ -71,7 +69,6 @@ public class Shooting : MonoBehaviour
         if (((Gamepad.all.Count > 0 && Gamepad.all[0].rightTrigger.IsPressed()) || Input.GetMouseButton(0)) && canFire)
         {
             canFire = false;
-            customLogger.Log("Shot succesfully fired");
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
         }
         //Shoot cooldown
@@ -84,8 +81,6 @@ public class Shooting : MonoBehaviour
                 timer = 0;
             }
         }
-
         lastMpositoin = Mouse.current.position.ReadValue();
-
     }
 }
