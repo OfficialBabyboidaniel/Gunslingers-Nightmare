@@ -1823,6 +1823,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78bfc3d0f480e1543b1c8d3ff84e2aba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  pickUpSound: {fileID: 0}
 --- !u!82 &1936990219
 AudioSource:
   m_ObjectHideFlags: 0
