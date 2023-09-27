@@ -15,8 +15,11 @@ public class SoundController : MonoBehaviour
 
     public void Start()
     {
-        ChaseScript = gameObject.GetComponent<AIChase>();
-        maxDistance = ChaseScript.MaxSightRange;
+        if (gameObject.CompareTag("Enemy"))
+        {
+            ChaseScript = gameObject.GetComponent<AIChase>();
+            maxDistance = ChaseScript.MaxSightRange;
+        }
     }
     private void Update()
     {
@@ -28,7 +31,7 @@ public class SoundController : MonoBehaviour
             float volume = 1f - (distanceToPlayer / maxDistance);
 
             // Clamp the volume to be between 0 and 1
-            volume = Mathf.Clamp(volume, 0, 0.2f);
+            volume = Mathf.Clamp(volume, 0, 0.4f);
 
             // Set the volume of the enemy's footsteps
             footstepAudioSource.volume = volume;
