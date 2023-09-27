@@ -18,7 +18,7 @@ public class PlayerCheatCode : MonoBehaviour
             // Restart the current level (scene)
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
-        
+
         if (Input.GetKeyDown(KeyCode.Alpha1))
         {
             // Load scene 0 (assuming your scenes start from 0)
@@ -30,6 +30,12 @@ public class PlayerCheatCode : MonoBehaviour
         {
             // Load scene 1 (assuming your scenes start from 0)
             SceneManager.LoadScene(1);
+        }
+
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            // Load scene 1 (assuming your scenes start from 0)
+            SceneManager.LoadScene(2);
         }
 
     }
