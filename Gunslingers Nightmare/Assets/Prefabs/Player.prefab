@@ -285,7 +285,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerHP: 30
-  DeathClip: {fileID: 8300000, guid: 1ef39c55d2b5d334db2569458d6b3796, type: 3}
+  DeathClip: {fileID: 8300000, guid: 45493b7d38009354ebe9a1c9d5edd977, type: 3}
   audioSource: {fileID: 1576116075}
 --- !u!82 &1576116075
 AudioSource:
