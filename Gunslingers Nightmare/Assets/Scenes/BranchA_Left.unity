@@ -134,6 +134,18 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1576116068}
+    - target: {fileID: 3347991149010723796, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
+      propertyPath: Spatialize
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347991149010723796, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
+      propertyPath: rolloffMode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347991149010723796, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
+      propertyPath: panLevelCustomCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3347991149010723800, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
       propertyPath: m_Name
       value: AIEnemy (2)
@@ -144,11 +156,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3347991149010723802, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -7.25
+      value: 4.6
       objectReference: {fileID: 0}
     - target: {fileID: 3347991149010723802, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.56
+      value: 7.88
       objectReference: {fileID: 0}
     - target: {fileID: 3347991149010723802, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
       propertyPath: m_LocalPosition.z
@@ -187,8 +199,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1576116064}
     - target: {fileID: 3347991149010723803, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3347991149010723803, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
       propertyPath: MaxSightRange
       value: 12.54
+      objectReference: {fileID: 0}
+    - target: {fileID: 6903801491046662623, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
+      propertyPath: maxVol
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6903801491046662623, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
       propertyPath: player
@@ -870,7 +890,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &755769396
 Transform:
   m_ObjectHideFlags: 0
@@ -946,6 +966,14 @@ PrefabInstance:
     - target: {fileID: 4670192439488620284, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
       propertyPath: m_Name
       value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670192439488620285, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
+      propertyPath: m_FlipX
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4670192439488620285, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
+      propertyPath: m_FlipY
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}

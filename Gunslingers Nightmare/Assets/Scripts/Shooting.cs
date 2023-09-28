@@ -42,6 +42,7 @@ public class Shooting : MonoBehaviour
             float ControtZ = Mathf.Atan2(ControllerPos.y, ControllerPos.x) * Mathf.Rad2Deg;
             transform.rotation = Quaternion.Euler(0, 0, ControtZ);
 
+
             // sätta muspekaren på rotate point, gick sådär haha gjorde en annan lösning men lite fulare då muspekaren inte följer med controller input
             // Vector3 screenPos = mainCam.WorldToScreenPoint(transform.position);
 
@@ -82,5 +83,7 @@ public class Shooting : MonoBehaviour
             }
         }
         lastMpositoin = Mouse.current.position.ReadValue();
+
+
     }
 }

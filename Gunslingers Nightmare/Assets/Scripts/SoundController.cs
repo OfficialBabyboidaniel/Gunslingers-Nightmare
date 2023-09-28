@@ -12,6 +12,7 @@ public class SoundController : MonoBehaviour
     public bool isDead = false;
 
     AIChase ChaseScript;
+    public float maxVol;
 
     public void Start()
     {
@@ -31,7 +32,7 @@ public class SoundController : MonoBehaviour
             float volume = 1f - (distanceToPlayer / maxDistance);
 
             // Clamp the volume to be between 0 and 1
-            volume = Mathf.Clamp(volume, 0, 0.4f);
+            volume = Mathf.Clamp(volume, 0, maxVol);
 
             // Set the volume of the enemy's footsteps
             footstepAudioSource.volume = volume;
