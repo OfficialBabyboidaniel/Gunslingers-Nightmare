@@ -6,12 +6,18 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/BranchA_Left.unity
+    guid: 93956a9f3279bec48adea3ff14166cdf
+  - enabled: 1
     path: Assets/Scenes/BranchA_Test_Right.unity
     guid: 8ed92f92d9d0a5948a683527bd508dd5
   - enabled: 1
-    path: Assets/Scenes/BranchA_UpAndDown.unity
-    guid: 498acc680c215f148bc556ce823ad0e4
+    path: Assets/Scenes/BranchA_Up.unity
+    guid: ca4ddd5dc2e319c45991908a79bf3338
   - enabled: 1
-    path: Assets/Scenes/BranchA_Left.unity
-    guid: 93956a9f3279bec48adea3ff14166cdf
+    path: Assets/Scenes/BranchA_Down.unity
+    guid: ae2cc472dbd798e4ab4de1b12d1b6507
+  - enabled: 1
+    path: Assets/Scenes/BranchA_AllDirections.unity
+    guid: 498acc680c215f148bc556ce823ad0e4
   m_configObjects: {}

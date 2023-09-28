@@ -38,5 +38,19 @@ public class PlayerCheatCode : MonoBehaviour
             SceneManager.LoadScene(2);
         }
 
+        if (Input.GetKeyDown(KeyCode.Alpha4))
+        {
+            // Load scene 1 (assuming your scenes start from 0)
+            SceneManager.LoadScene(3);
+        }
+        
+        if (Input.GetKeyDown(KeyCode.Alpha5))
+        {
+            // Load scene 1 (assuming your scenes start from 0)
+            SceneManager.LoadScene(4);
+        }
+
+
+
     }
 }
