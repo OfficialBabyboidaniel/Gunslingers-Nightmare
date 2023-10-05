@@ -23,16 +23,13 @@ public class AIAttack : State
     private float hitRange;
 
     AIManager AIManager;
-    SoundController soundController;
     public override void StateEnter()
     {
-        soundController = gameObject.GetComponent<SoundController>();
         AIStats StatsScript = gameObject.GetComponent<AIStats>();
         attackCooldown = StatsScript.attackCooldown;
         HitDamage = StatsScript.HitDamage;
         hitRange = StatsScript.hitRange;
         AIManager = gameObject.GetComponent<AIManager>();
-        soundController.shouldPlay = false;
     }
     public override void StateUpdate()
     {
@@ -84,6 +81,6 @@ public class AIAttack : State
 
     public override void StateExit()
     {
-        soundController.shouldPlay = true;
+        
     }
 }
