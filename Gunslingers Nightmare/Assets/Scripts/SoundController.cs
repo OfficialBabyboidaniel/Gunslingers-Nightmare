@@ -10,7 +10,6 @@ public class SoundController : MonoBehaviour
     public AudioSource audioSource; // Reference to the AudioSource on the enemy
 
     public AudioClip audioClip;
-    public bool isDead = false;
 
     AIStats AIStats;
 
@@ -30,10 +29,12 @@ public class SoundController : MonoBehaviour
     private void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
+        Debug.Log(shouldPlay + "= should play");
         if (shouldPlay)
         {
             if (maxDistance >= distanceToPlayer)
             {
+                Debug.Log("trying to paly chase sond");
                 audioSource.clip = audioClip;
                 // Calculate the distance between the enemy and the player
                 // Calculate the volume based on the distance (closer = louder, farther = quieter)
@@ -49,15 +50,7 @@ public class SoundController : MonoBehaviour
                 // Set the volume of the enemy's footsteps
                 audioSource.volume = volume;
 
-                if (isDead)
-                {
-                    audioSource.Stop();
-                }
-                else if (!audioSource.isPlaying)
-                {
-
-                    audioSource.Play();
-                }
+                audioSource.Play();
             }
         }
 

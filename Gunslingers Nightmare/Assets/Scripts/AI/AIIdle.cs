@@ -12,7 +12,7 @@ public class AIIdle : State
 
     public override void StateEnter()
     {
-        AIManager = GetComponent<AIManager>();
+        AIManager = gameObject.GetComponent<AIManager>();
         AIStats StatsScript = GetComponent<AIStats>();
         MaxSightRange = StatsScript.MaxSightRange;
     }
