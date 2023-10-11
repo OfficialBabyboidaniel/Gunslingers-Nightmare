@@ -12,7 +12,7 @@ public class AIAttack : State
 
     public AudioSource AudioSource;
 
-    private float timeSinceLastAttack = 0f;
+    private float timeSinceLastAttack;
 
     private float attackCooldown;
 
@@ -22,6 +22,8 @@ public class AIAttack : State
 
     private float hitRange;
 
+    private bool hasWaitedForAttackFunction;
+
     AIManager AIManager;
     public override void StateEnter()
     {
@@ -30,20 +32,24 @@ public class AIAttack : State
         HitDamage = StatsScript.HitDamage;
         hitRange = StatsScript.hitRange;
         AIManager = gameObject.GetComponent<AIManager>();
+        timeSinceLastAttack = attackCooldown;
+        hasWaitedForAttackFunction = true;
     }
     public override void StateUpdate()
     {
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-        if (distanceToPlayer > hitRange)
+        if (distanceToPlayer > hitRange && hasWaitedForAttackFunction)
         {
             StateExit();
             AIManager.stateMachine.ChangeState(AIManager.AIChase);
         }
 
+
         if (timeSinceLastAttack >= attackCooldown)
         {
             DoDamage();
+            hasWaitedForAttackFunction = false;
             timeSinceLastAttack = 0f;
         }
         // Update the timer
@@ -68,19 +74,27 @@ public class AIAttack : State
     }
     private void PlayTakeDamageSound()
     {
-
-        PlayerStats playerStats = player.GetComponent<PlayerStats>();
-
-        if (playerStats != null)
+        if (distanceToPlayer > hitRange)
         {
-            AudioSource.pitch = 1;
-            playerStats.playerHP -= HitDamage;
-            AudioSource.PlayOneShot(PlayerTakeDamage);
+            StateExit();
+            AIManager.stateMachine.ChangeState(AIManager.AIChase);
+        }
+        else
+        {
+            PlayerStats playerStats = player.GetComponent<PlayerStats>();
+
+            if (playerStats != null)
+            {
+                AudioSource.pitch = 1;
+                playerStats.playerHP -= HitDamage;
+                AudioSource.PlayOneShot(PlayerTakeDamage);
+            }
+            hasWaitedForAttackFunction = true;
         }
     }
 
     public override void StateExit()
     {
-        
+
     }
 }

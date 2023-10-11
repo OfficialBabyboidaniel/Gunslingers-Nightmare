@@ -13,13 +13,11 @@ public class AIDeath : State
 
     private bool hasPlayedDeathSound = false;
 
+    private const float MaxSoundRange = 40.0f;
+
     public override void StateEnter()
     {
-        // audioSource = AIManager.audioSource;
-        // DeathClip = AIManager.Deathclip;
-        //player = AIManager.player.transform;
-        SoundController soundController = GetComponent<SoundController>();
-        soundController.audioSource.Stop();
+
     }
 
     public override void StateUpdate()
@@ -31,7 +29,9 @@ public class AIDeath : State
             float distanceToPlayer = Vector3.Distance(transform.position, player.position);
 
             // Calculate the volume based on the distance (closer = louder, farther = quieter)
-            float volume = 1f - (distanceToPlayer / Mathf.Max(0.01f, distanceToPlayer)); // Avoid division by zero
+
+            //dont work
+            float volume = 1f - (distanceToPlayer / MaxSoundRange); // Avoid division by zero
 
             // Clamp the volume to be between 0 and 1
             volume = Mathf.Clamp01(volume);
