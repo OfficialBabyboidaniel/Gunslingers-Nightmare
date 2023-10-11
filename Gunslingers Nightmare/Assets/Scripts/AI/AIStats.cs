@@ -8,17 +8,6 @@ public class AIStats : MonoBehaviour
     public int HitDamage = 4;
     public float attackCooldown = 3f; // Cooldown time in seconds
     public float MaxSightRange = 10.0f;
-
     public float hitRange = 1.0f;
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-
-    }
+    
 }
