@@ -13,11 +13,9 @@ public class AIDeath : State
 
     private bool hasPlayedDeathSound = false;
 
-    private const float MaxSoundRange = 40.0f;
-
     public override void StateEnter()
     {
-
+        
     }
 
     public override void StateUpdate()
@@ -26,19 +24,6 @@ public class AIDeath : State
         {
             hasPlayedDeathSound = true;
             Debug.Log("playing death sound");
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-            // Calculate the volume based on the distance (closer = louder, farther = quieter)
-
-            //dont work
-            float volume = 1f - (distanceToPlayer / MaxSoundRange); // Avoid division by zero
-
-            // Clamp the volume to be between 0 and 1
-            volume = Mathf.Clamp01(volume);
-            Debug.Log("death sound volume = " + volume);
-            // Set the volume of the enemy's footsteps
-            audioSource.volume = volume;
-
             // You can also play the footstep sound here if it's not already playing
             audioSource.PlayOneShot(DeathClip);
 
