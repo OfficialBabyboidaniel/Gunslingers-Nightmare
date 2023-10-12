@@ -27,6 +27,7 @@ public class AIChase : State
         AIManager = gameObject.GetComponent<AIManager>();
         // SoundController soundController = gameObject.GetComponent<SoundController>();
         //soundController.audioSource.Play();
+        EnemyMovingAudioSource.pitch = Random.Range(0.8f, 1.2f);
         EnemyMovingAudioSource.clip = EnemyFootsteps;
         EnemyMovingAudioSource.Play();
 
@@ -57,6 +58,7 @@ public class AIChase : State
     public override void StateExit()
     {
         CanMove = false;
+        EnemyMovingAudioSource.pitch = 1;
         EnemyMovingAudioSource.Stop();
     }
 
