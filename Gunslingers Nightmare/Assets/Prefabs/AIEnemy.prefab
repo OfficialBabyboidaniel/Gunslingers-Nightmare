@@ -337,7 +337,7 @@ MonoBehaviour:
   directBinaural: 1
   interpolation: 1
   perspectiveCorrection: 0
-  distanceAttenuation: 0
+  distanceAttenuation: 1
   distanceAttenuationInput: 0
   distanceAttenuationValue: 1
   airAbsorption: 0
