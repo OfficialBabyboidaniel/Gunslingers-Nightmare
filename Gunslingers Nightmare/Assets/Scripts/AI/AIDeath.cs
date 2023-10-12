@@ -15,11 +15,7 @@ public class AIDeath : State
 
     public override void StateEnter()
     {
-        // audioSource = AIManager.audioSource;
-        // DeathClip = AIManager.Deathclip;
-        //player = AIManager.player.transform;
-        SoundController soundController = GetComponent<SoundController>();
-        soundController.audioSource.Stop();
+        
     }
 
     public override void StateUpdate()
@@ -28,17 +24,6 @@ public class AIDeath : State
         {
             hasPlayedDeathSound = true;
             Debug.Log("playing death sound");
-            float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-
-            // Calculate the volume based on the distance (closer = louder, farther = quieter)
-            float volume = 1f - (distanceToPlayer / Mathf.Max(0.01f, distanceToPlayer)); // Avoid division by zero
-
-            // Clamp the volume to be between 0 and 1
-            volume = Mathf.Clamp01(volume);
-            Debug.Log("death sound volume = " + volume);
-            // Set the volume of the enemy's footsteps
-            audioSource.volume = volume;
-
             // You can also play the footstep sound here if it's not already playing
             audioSource.PlayOneShot(DeathClip);
 
