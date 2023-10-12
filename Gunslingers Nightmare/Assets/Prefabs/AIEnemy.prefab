@@ -240,7 +240,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 0.5
   HitDamage: 4
-  attackCooldown: 3
+  attackCooldown: 5
   MaxSightRange: 16.211784
   hitRange: 1
 --- !u!114 &5210929770847399568
