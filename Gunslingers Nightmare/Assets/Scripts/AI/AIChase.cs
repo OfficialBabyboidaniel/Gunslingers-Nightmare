@@ -29,6 +29,7 @@ public class AIChase : State
         //soundController.audioSource.Play();
         EnemyMovingAudioSource.pitch = Random.Range(0.8f, 1.2f);
         EnemyMovingAudioSource.clip = EnemyFootsteps;
+        EnemyMovingAudioSource.loop = true;
         EnemyMovingAudioSource.Play();
 
     }
@@ -59,6 +60,7 @@ public class AIChase : State
     {
         CanMove = false;
         EnemyMovingAudioSource.pitch = 1;
+        EnemyMovingAudioSource.loop = true;
         EnemyMovingAudioSource.Stop();
     }
 
