@@ -28,8 +28,6 @@ public class AIManager : MonoBehaviour
 
     AIStats AIStats;
 
-
-
     void Start()
     {
         AIAttack = gameObject.GetComponent<AIAttack>();

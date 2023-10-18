@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerStats : MonoBehaviour
 {
@@ -10,9 +12,15 @@ public class PlayerStats : MonoBehaviour
 
     public AudioClip DeathClip;
 
+    public AudioClip GameOver;
+
     public AudioSource audioSource;
 
-    private bool isNotDead = false;
+    private bool isDead = false;
+
+    public GameObject canvas;
+
+
     void Start()
     {
 
@@ -21,7 +29,7 @@ public class PlayerStats : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (playerHP <= 0 && !isNotDead )
+        if (playerHP <= 0 && !isDead)
         {
             audioSource.PlayOneShot(DeathClip);
             Renderer renderer = GetComponent<Renderer>();
@@ -32,9 +40,12 @@ public class PlayerStats : MonoBehaviour
 
             Destroy(gameObject, DeathClip.length);
 
+            PlayerPrefs.SetInt("PreviosScene", SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene(3);
+
             Time.timeScale = 0f;
-            
-            isNotDead = true;
+
+            isDead = true;
         }
     }
 }
