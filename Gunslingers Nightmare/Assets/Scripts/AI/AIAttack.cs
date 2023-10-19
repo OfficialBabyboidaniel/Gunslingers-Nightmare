@@ -44,8 +44,7 @@ public class AIAttack : State
             StateExit();
             AIManager.stateMachine.ChangeState(AIManager.AIChase);
         }
-
-
+        
         if (timeSinceLastAttack >= attackCooldown)
         {
             DoDamage();

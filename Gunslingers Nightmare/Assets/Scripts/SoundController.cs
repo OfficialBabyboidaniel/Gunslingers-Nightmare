@@ -29,12 +29,11 @@ public class SoundController : MonoBehaviour
     private void Update()
     {
         float distanceToPlayer = Vector3.Distance(transform.position, player.position);
-        Debug.Log(shouldPlay + "= should play");
+
         if (shouldPlay)
         {
             if (maxDistance >= distanceToPlayer)
             {
-                Debug.Log("trying to paly chase sond");
                 audioSource.clip = audioClip;
                 // Calculate the distance between the enemy and the player
                 // Calculate the volume based on the distance (closer = louder, farther = quieter)
