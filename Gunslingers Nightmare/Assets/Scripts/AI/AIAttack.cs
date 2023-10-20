@@ -28,6 +28,8 @@ public class AIAttack : State
 
     AIManager AIManager;
     PlayerStats playerStats;
+
+    private bool hasPlayedDeathSound = false;
     public override void StateEnter()
     {
         AIStats StatsScript = gameObject.GetComponent<AIStats>();
@@ -43,10 +45,10 @@ public class AIAttack : State
     {
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
-        if (playerStats.playerHP <= 0)
+        if (playerStats.playerHP <= 0 && !hasPlayedDeathSound)
         {
-            Debug.Log("trying to play player death sound");
             AudioSource.PlayOneShot(playerDeath);
+            hasPlayedDeathSound = true;
             Invoke("ChangeStateIdle", playerDeath.length);
         }
 
