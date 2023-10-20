@@ -8,6 +8,8 @@ public class AIAttack : State
     public GameObject player;
     public AudioClip PlayerTakeDamage;
 
+    public AudioClip playerDeath;
+
     public AudioClip EnemyAttack;
 
     public AudioSource AudioSource;
@@ -25,6 +27,7 @@ public class AIAttack : State
     private bool hasWaitedForAttackFunction;
 
     AIManager AIManager;
+    PlayerStats playerStats;
     public override void StateEnter()
     {
         AIStats StatsScript = gameObject.GetComponent<AIStats>();
@@ -34,18 +37,26 @@ public class AIAttack : State
         AIManager = gameObject.GetComponent<AIManager>();
         timeSinceLastAttack = attackCooldown;
         hasWaitedForAttackFunction = true;
+        playerStats = player.GetComponent<PlayerStats>();
     }
     public override void StateUpdate()
     {
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
+
+        if (playerStats.playerHP <= 0)
+        {
+            Debug.Log("trying to play player death sound");
+            AudioSource.PlayOneShot(playerDeath);
+            Invoke("ChangeStateIdle", playerDeath.length);
+        }
 
         if (distanceToPlayer > hitRange && hasWaitedForAttackFunction)
         {
             StateExit();
             AIManager.stateMachine.ChangeState(AIManager.AIChase);
         }
-        
-        if (timeSinceLastAttack >= attackCooldown)
+
+        if (timeSinceLastAttack >= attackCooldown && playerStats.playerHP > 0)
         {
             DoDamage();
             hasWaitedForAttackFunction = false;
@@ -80,13 +91,12 @@ public class AIAttack : State
         }
         else
         {
-            PlayerStats playerStats = player.GetComponent<PlayerStats>();
-
-            if (playerStats != null)
+            if (playerStats.playerHP > 0 && playerStats != null)
             {
                 AudioSource.pitch = 1;
                 playerStats.playerHP -= HitDamage;
                 AudioSource.PlayOneShot(PlayerTakeDamage);
+
             }
             hasWaitedForAttackFunction = true;
         }
@@ -95,5 +105,10 @@ public class AIAttack : State
     public override void StateExit()
     {
 
+    }
+
+    void ChangeStateIdle()
+    {
+        AIManager.stateMachine.ChangeState(AIManager.AIIdle);
     }
 }

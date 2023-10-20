@@ -14,6 +14,7 @@ public class PlayerStats : MonoBehaviour
     private bool isDead = false;
 
     // Update is called once per frame
+    
     void Update()
     {
 
@@ -22,7 +23,7 @@ public class PlayerStats : MonoBehaviour
         {
             // audio source is disabled bug?? fattar inte. make no sense 
             Debug.Log("player is dead");
-            audioSource.PlayOneShot(DeathClip);
+            //audioSource.PlayOneShot(DeathClip);
 
             Renderer renderer = GetComponent<Renderer>();
             if (renderer != null)
@@ -32,7 +33,7 @@ public class PlayerStats : MonoBehaviour
 
             isDead = true;
 
-            Invoke("LoadNextScene", DeathClip.length);
+            Invoke("LoadNextScene", DeathClip.length + 0.1f);
         }
     }
 
