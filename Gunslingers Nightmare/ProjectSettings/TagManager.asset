@@ -8,6 +8,7 @@ TagManager:
   - Enemy
   - Bullet
   - Wall
+  - GameOverCanvas
   layers:
   - Default
   - TransparentFX
