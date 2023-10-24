@@ -11,11 +11,27 @@ public class PlayerHitWall : MonoBehaviour
     private AudioSource source;
     [SerializeField] private AudioClip hitClip;
 
-    // private Rigidbody2D rb;
+    [SerializeField] private float buffer = 0.3f;
+
+    private Rigidbody2D rb;
+    private bool playNextClip;
+    private float wallTimer;
 
     void Start() {
         source = soundObject.GetComponent<AudioSource>();
-        // rb = GetComponent<Rigidbody2D>();
+        rb = GetComponent<Rigidbody2D>();
+        playNextClip = false;
+    }
+
+    void Update() {
+        if (!playNextClip) {
+            wallTimer += Time.deltaTime;
+            if (wallTimer > source.clip.length + buffer)   // 0.5 is extra buffer time.
+                {
+                    playNextClip = true;
+                    wallTimer = 0;
+                }
+        }
     }
 
     void OnCollisionEnter2D(Collision2D other)
@@ -25,11 +41,11 @@ public class PlayerHitWall : MonoBehaviour
         }
     }
 
-    /*
     void OnCollisionStay2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Wall") && rb.velocity.magnitude > 1.0f && playNextClip) {
             source.PlayOneShot(hitClip);
+            playNextClip = false;
         }
     }
-    */
+
 }
