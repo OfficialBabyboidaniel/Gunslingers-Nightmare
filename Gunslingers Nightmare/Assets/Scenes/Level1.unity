@@ -1086,7 +1086,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1183,7 +1183,7 @@ MonoBehaviour:
   player: {fileID: 1576116068}
   maxDistance: 30
   audioSource: {fileID: 1481007631}
-  audioClip: {fileID: 8300000, guid: fbed10222e18c754aa2b25526aab8fc7, type: 3}
+  audioClip: {fileID: 8300000, guid: d32ec8f1301bddf4885535f00aba9c11, type: 3}
   shouldPlay: 1
 --- !u!1 &1576116064 stripped
 GameObject:
@@ -1783,7 +1783,7 @@ AudioSource:
   m_PlayOnAwake: 1
   m_Volume: 0.853
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -1880,7 +1880,7 @@ MonoBehaviour:
   player: {fileID: 1576116068}
   maxDistance: 30
   audioSource: {fileID: 1936990219}
-  audioClip: {fileID: 8300000, guid: fbed10222e18c754aa2b25526aab8fc7, type: 3}
+  audioClip: {fileID: 8300000, guid: c98d2a33bd176e3448b5947b616866f2, type: 3}
   shouldPlay: 1
 --- !u!1 &1976337689
 GameObject:
