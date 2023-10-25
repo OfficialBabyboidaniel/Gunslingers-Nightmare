@@ -12,9 +12,9 @@ public class PlayerStats : MonoBehaviour
     public AudioSource audioSource;
     public AudioClip DeathClip;
     private bool isDead = false;
-
+    public float timeBetweenFiring = 0.3f;
     // Update is called once per frame
-    
+
     void Update()
     {
 

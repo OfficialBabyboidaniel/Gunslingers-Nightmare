@@ -16,14 +16,14 @@ public class AIChase : State
     public bool CanMove = false;
 
     AIManager AIManager;
+    AIStats StatsScript;
 
 
     public override void StateEnter()
     {
-        AIStats StatsScript = GetComponent<AIStats>();
+        StatsScript = GetComponent<AIStats>();
         hitRange = StatsScript.hitRange;
         MaxSightRange = StatsScript.MaxSightRange;
-        EnemyChaseSpeed = StatsScript.speed;
         AIManager = gameObject.GetComponent<AIManager>();
         // SoundController soundController = gameObject.GetComponent<SoundController>();
         //soundController.audioSource.Play();
@@ -36,6 +36,7 @@ public class AIChase : State
 
     public override void StateUpdate()
     {
+        EnemyChaseSpeed = StatsScript.speed;
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         if (distanceToPlayer > MaxSightRange)

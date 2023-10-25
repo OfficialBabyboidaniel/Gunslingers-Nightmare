@@ -15,7 +15,7 @@ public class BulletScript : MonoBehaviour
     private Rigidbody2D rb;
     public float force;
 
-     
+    
 
     // Start is called before the first frame update
     void Start()
