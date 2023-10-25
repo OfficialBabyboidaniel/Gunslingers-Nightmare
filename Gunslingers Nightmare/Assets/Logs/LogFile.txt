@@ -1,8 +1,0 @@
-playsession: 52, date & time: 10/25/2023 3:52:11 PM, Player has shot
-playsession: 52, date & time: 10/25/2023 3:52:15 PM, Player has shot
-playsession: 52, date & time: 10/25/2023 3:52:21 PM, Player has shot
-playsession: 52, date & time: 10/25/2023 3:52:26 PM, Player has shot
-playsession: 52, date & time: 10/25/2023 3:52:29 PM, Player has shot
-playsession: 52, date & time: 10/25/2023 3:52:34 PM, Player has shot
-playsession: 52, date & time: 10/25/2023 3:52:42 PM, Player has shot
-playsession: 53, date & time: 10/25/2023 3:53:21 PM, Player has shot

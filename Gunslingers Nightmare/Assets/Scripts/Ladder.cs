@@ -30,7 +30,7 @@ public class Ladder : MonoBehaviour
     {
         if (col.gameObject.CompareTag("Player") && keyFound)
         {
-            Debug.Log("Reached ladder");
+            Debug.LogError("Reached ladder");
             if (SceneManager.GetActiveScene().buildIndex + 1 == 3)
             {
                 SceneManager.LoadScene(0);
