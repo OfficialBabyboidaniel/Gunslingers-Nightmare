@@ -44,7 +44,6 @@ public class footsteps : MonoBehaviour
             source.enabled = false;
         }
 
-        // Debug.Log(rb.velocity.magnitude);
     }
 
     private void footstepsFunction() {
