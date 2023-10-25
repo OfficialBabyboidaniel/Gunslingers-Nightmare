@@ -10,6 +10,7 @@ public class WriteDebugToFile : MonoBehaviour
 
     private void OnEnable()
     {
+        Debug.unityLogger.logEnabled = false;
         Application.logMessageReceived += Log;
     }
 
