@@ -917,9 +917,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5521027730693907641, guid: bca979d09cccb65408c75d435b16b706, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5521027730693907652, guid: bca979d09cccb65408c75d435b16b706, type: 3}
       propertyPath: m_Name
       value: PauseMeny (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521027730693907652, guid: bca979d09cccb65408c75d435b16b706, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5521027730851775535, guid: bca979d09cccb65408c75d435b16b706, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -930,9 +938,17 @@ PrefabInstance:
       value: BackToMeny
       objectReference: {fileID: 0}
     - target: {fileID: 5521027731004222967, guid: bca979d09cccb65408c75d435b16b706, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5521027731004222967, guid: bca979d09cccb65408c75d435b16b706, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1310007913}
+    - target: {fileID: 5521027731004222967, guid: bca979d09cccb65408c75d435b16b706, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 5521027731004222967, guid: bca979d09cccb65408c75d435b16b706, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: Resume
@@ -1266,6 +1282,10 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1576116068}
+    - target: {fileID: 1700821192, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
+      propertyPath: DopplerLevel
+      value: 1.25
+      objectReference: {fileID: 0}
     - target: {fileID: 3347991149010723800, guid: 5f3c7354f05b10340b982082ddc26654, type: 3}
       propertyPath: m_Name
       value: AIEnemy

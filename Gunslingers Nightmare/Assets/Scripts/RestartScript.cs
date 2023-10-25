@@ -10,5 +10,6 @@ public class RestartScript : MonoBehaviour
     public void Restart()
     {
         SceneManager.LoadScene(PlayerPrefs.GetInt("PreviosScene"));
+        Debug.Log("tryinng to restart");
     }
 }

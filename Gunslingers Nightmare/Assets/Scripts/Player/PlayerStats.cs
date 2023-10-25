@@ -40,6 +40,7 @@ public class PlayerStats : MonoBehaviour
     void LoadNextScene()
     {
         PlayerPrefs.SetInt("PreviosScene", SceneManager.GetActiveScene().buildIndex);
+        PlayerPrefs.Save();
         SceneManager.LoadScene(3);
     }
 }
