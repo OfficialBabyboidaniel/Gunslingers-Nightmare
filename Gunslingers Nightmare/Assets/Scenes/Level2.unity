@@ -4452,9 +4452,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1576116068}
   maxDistance: 30
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
-  shouldPlay: 1
+  audioSource: {fileID: 1481007631}
+  audioClip: {fileID: 8300000, guid: d32ec8f1301bddf4885535f00aba9c11, type: 3}
+  shouldPlay: 0
 --- !u!1 &1560594264
 GameObject:
   m_ObjectHideFlags: 0
@@ -6008,9 +6008,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 1576116068}
   maxDistance: 30
-  audioSource: {fileID: 0}
-  audioClip: {fileID: 0}
-  shouldPlay: 1
+  audioSource: {fileID: 1936990219}
+  audioClip: {fileID: 8300000, guid: c98d2a33bd176e3448b5947b616866f2, type: 3}
+  shouldPlay: 0
 --- !u!1 &1976337689
 GameObject:
   m_ObjectHideFlags: 0
