@@ -17,6 +17,10 @@ public class PlayerHitWall : MonoBehaviour
     private bool playNextClip;
     private float wallTimer;
 
+    [SerializeField] private bool playSound = true;
+
+    [SerializeField] private bool playSoundContinues = true;
+
     void Start() {
         source = soundObject.GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
@@ -36,13 +40,13 @@ public class PlayerHitWall : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if (other.gameObject.CompareTag("Wall")) {
+        if (other.gameObject.CompareTag("Wall") && playSound) {
             source.PlayOneShot(hitClip);
         }
     }
 
     void OnCollisionStay2D(Collision2D collision) {
-        if (collision.gameObject.CompareTag("Wall") && rb.velocity.magnitude > 1.0f && playNextClip) {
+        if (collision.gameObject.CompareTag("Wall") && rb.velocity.magnitude > 1.0f && playNextClip && playSound && playSoundContinues) {
             source.PlayOneShot(hitClip);
             playNextClip = false;
         }
