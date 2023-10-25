@@ -19,7 +19,7 @@ public class Shooting : MonoBehaviour
     public Transform bulletTransform;
     public bool canFire;
     private float timer;
-    public float timeBetweenFiring;
+    private float timeBetweenFiring;
     private Vector2 lastMpositoin;
 
 
@@ -33,7 +33,7 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        timeBetweenFiring = gameObject.GetComponentInParent<PlayerStats>().timeBetweenFiring;
 
         // för controller
         if (Gamepad.all.Count > 0 && Gamepad.all[0].rightStick.IsPressed())

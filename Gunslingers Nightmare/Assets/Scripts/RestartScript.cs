@@ -7,9 +7,8 @@ public class RestartScript : MonoBehaviour
 {
     // Start is called before the first frame update
 
-    void Restart()
+    public void Restart()
     {
-
         SceneManager.LoadScene(PlayerPrefs.GetInt("PreviosScene"));
     }
 }
