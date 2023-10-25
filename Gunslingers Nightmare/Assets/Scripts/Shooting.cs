@@ -69,6 +69,7 @@ public class Shooting : MonoBehaviour
         if (((Gamepad.all.Count > 0 && Gamepad.all[0].rightTrigger.IsPressed()) || Input.GetMouseButton(0)) && canFire)
         {
             canFire = false;
+            Debug.Log("Player has shot");
             Instantiate(bullet, bulletTransform.position, Quaternion.identity);
         }
         //Shoot cooldown

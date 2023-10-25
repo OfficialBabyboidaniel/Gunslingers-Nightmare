@@ -271,8 +271,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   JSONText: {fileID: 4900000, guid: b04e471dcb6ec8d4f8ff2189c5a47956, type: 3}
-  myPlayerList:
+  PlayerInGame: {fileID: 0}
+  Enemys: []
+  DialogueSource: {fileID: 0}
+  WallSource: {fileID: 0}
+  datas:
     player: []
+    enemy: []
+    level: []
 --- !u!4 &1664160386
 Transform:
   m_ObjectHideFlags: 0

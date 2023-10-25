@@ -21,6 +21,7 @@ public class PlayerHitWall : MonoBehaviour
 
     [SerializeField] private bool playSoundContinues = true;
 
+
     void Start() {
         source = soundObject.GetComponent<AudioSource>();
         rb = GetComponent<Rigidbody2D>();
