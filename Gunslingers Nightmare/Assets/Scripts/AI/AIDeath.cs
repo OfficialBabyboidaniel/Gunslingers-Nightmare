@@ -23,7 +23,7 @@ public class AIDeath : State
         if (!hasPlayedDeathSound)
         {
             hasPlayedDeathSound = true;
-            Debug.Log("Enemy has died");
+            Debug.LogError("Enemy has died");
             // You can also play the footstep sound here if it's not already playing
             audioSource.PlayOneShot(DeathClip);
 
