@@ -14,6 +14,7 @@
     "level": [
         {
             "ContinueWallHitSound": 1,
+            "ShouldWallPlaySound": 1,
             "DialogueVolume": 1,
             "WallVolume": 1
         }

@@ -11,7 +11,7 @@ public class JSONReader : MonoBehaviour
 
     public List<GameObject> Enemys = new List<GameObject>();
 
-    public GameObject DialogueSource = null;
+    public GameObject DialogueSource;
     public GameObject WallSource;
 
 
@@ -33,6 +33,7 @@ public class JSONReader : MonoBehaviour
     public class Level
     {
         public bool ContinueWallHitSound;
+        public bool ShouldWallPlaySound;
         public float DialogueVolume;
         public float WallVolume;
     }
@@ -66,7 +67,13 @@ public class JSONReader : MonoBehaviour
         {
             DialogueSource.GetComponent<AudioSource>().volume = datas.level[0].DialogueVolume;
         }
+        if (WallSource != null)
+        {
+            WallSource.GetComponent<AudioSource>().volume = datas.level[0].WallVolume;
+        }
 
+        PlayerInGame.GetComponent<PlayerHitWall>().playSound = datas.level[0].ShouldWallPlaySound;
+        PlayerInGame.GetComponent<PlayerHitWall>().playSoundContinues = datas.level[0].ContinueWallHitSound;
     }
 
     // Update is called once per frame
