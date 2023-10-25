@@ -66,6 +66,11 @@ public class JSONReader : MonoBehaviour
         {
             DialogueSource.GetComponent<AudioSource>().volume = datas.level[0].DialogueVolume;
         }
+        if (WallSource != null)
+        {
+            WallSource.GetComponent<AudioSource>().volume = datas.level[0].WallVolume;
+        }
+        
 
     }
 
