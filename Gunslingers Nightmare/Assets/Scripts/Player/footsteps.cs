@@ -10,6 +10,7 @@ public class footsteps : MonoBehaviour
 
     private float FootstepTimer;
     private bool playNextClip;
+    [SerializeField] private float buffer = 0.3f;
 
     [SerializeField] private Rigidbody2D rb;
 
@@ -29,7 +30,7 @@ public class footsteps : MonoBehaviour
 
         if (!playNextClip) {
             FootstepTimer += Time.deltaTime;
-            if (FootstepTimer > source.clip.length + 0.5)   // 0.5 is extra buffer time.
+            if (FootstepTimer > source.clip.length + buffer)   // 0.5 is extra buffer time.
             {
                 playNextClip = true;
                 FootstepTimer = 0;
