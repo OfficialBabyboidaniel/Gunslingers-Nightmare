@@ -28,13 +28,12 @@ public class AIAttack : State
 
     AIManager AIManager;
     PlayerStats playerStats;
+    AIStats StatsScript;
 
     private bool hasPlayedDeathSound = false;
     public override void StateEnter()
     {
-        AIStats StatsScript = gameObject.GetComponent<AIStats>();
-        attackCooldown = StatsScript.attackCooldown;
-        HitDamage = StatsScript.HitDamage;
+        StatsScript = gameObject.GetComponent<AIStats>();
         hitRange = StatsScript.hitRange;
         AIManager = gameObject.GetComponent<AIManager>();
         timeSinceLastAttack = attackCooldown;
@@ -43,6 +42,8 @@ public class AIAttack : State
     }
     public override void StateUpdate()
     {
+        HitDamage = StatsScript.HitDamage;
+        attackCooldown = StatsScript.attackCooldown;
         distanceToPlayer = Vector2.Distance(transform.position, player.transform.position);
 
         if (playerStats.playerHP <= 0 && !hasPlayedDeathSound)

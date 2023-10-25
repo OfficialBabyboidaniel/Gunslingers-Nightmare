@@ -1,0 +1,21 @@
+{
+    "player": [
+        {
+            "TimeBetweenFiring": 0.3
+        }
+    ],
+    "enemy": [
+        {
+            "EnemyAttackDmg": 10,
+            "EnemyAttackDelay": 3,
+            "EnemyMovementSpeed": 1 
+        }
+    ],
+    "level": [
+        {
+            "ContinueWallHitSound": 1,
+            "DialogueVolume": 1,
+            "WallVolume": 1
+        }
+    ]
+}
