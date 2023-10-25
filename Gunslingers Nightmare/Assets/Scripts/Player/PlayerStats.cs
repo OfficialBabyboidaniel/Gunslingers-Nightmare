@@ -22,7 +22,7 @@ public class PlayerStats : MonoBehaviour
         if (playerHP <= 0 && !isDead)
         {
             
-            Debug.Log("player is dead");
+            Debug.LogError("player is dead");
             audioSource.PlayOneShot(DeathClip);
 
             Renderer renderer = GetComponent<Renderer>();

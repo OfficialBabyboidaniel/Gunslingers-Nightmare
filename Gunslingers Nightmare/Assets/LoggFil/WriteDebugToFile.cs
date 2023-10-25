@@ -10,7 +10,6 @@ public class WriteDebugToFile : MonoBehaviour
 
     private void OnEnable()
     {
-        Debug.unityLogger.logEnabled = false;
         Application.logMessageReceived += Log;
     }
 
@@ -22,6 +21,7 @@ public class WriteDebugToFile : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+      //  Debug.unityLogger.logEnabled = false;
         filename = "Assets/Logs/LogFile.txt";
         playsession = PlayerPrefs.GetInt("PlaySession", 0);
         IncrementPlaySession(); // Increment playsession when the game starts
@@ -36,9 +36,12 @@ public class WriteDebugToFile : MonoBehaviour
 
     public void Log(string logString, string stackTrace, LogType type)
     {
-        TextWriter tw = new StreamWriter(filename, true);
-        tw.WriteLine("playsession: " + playsession + ", date & time: " + System.DateTime.Now + ", " + logString);
-        tw.Close();
+        if (type == LogType.Error)
+        {
+            TextWriter tw = new StreamWriter(filename, true);
+            tw.WriteLine("playsession: " + playsession + ", date & time: " + System.DateTime.Now + ", " + logString);
+            tw.Close();
+        }
     }
 }
 
