@@ -25,6 +25,7 @@ public class SoundController : MonoBehaviour
             AIStats = gameObject.GetComponent<AIStats>();
             maxDistance = AIStats.MaxSightRange;
         }
+        audioSource.loop = true;
     }
     private void Update()
     {
