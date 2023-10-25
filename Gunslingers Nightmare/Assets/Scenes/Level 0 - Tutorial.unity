@@ -787,8 +787,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundsToPlay:
   - {fileID: 8300000, guid: bc0a402afe5dbc04bad9748bb5a8d396, type: 3}
-  - {fileID: 8300000, guid: e601509882d612742bacb498d6fb1f43, type: 3}
-  - {fileID: 8300000, guid: 7b26b10093530824895d7c029498e70f, type: 3}
+  - {fileID: 8300000, guid: f06231314df8d498e867edec6f0475d0, type: 3}
+  - {fileID: 8300000, guid: 56c4109f1ccf84058ad51791b5df6316, type: 3}
+  - {fileID: 8300000, guid: 193c1794284334988a7c46706fd638b5, type: 3}
   - {fileID: 8300000, guid: fbed10222e18c754aa2b25526aab8fc7, type: 3}
   initialDelay: 1
   delayBetweenSounds: 1.5
