@@ -83,7 +83,6 @@ public class AIAttack : State
 
         Invoke("PlayTakeDamageSound", delay);
 
-
     }
     private void PlayTakeDamageSound()
     {

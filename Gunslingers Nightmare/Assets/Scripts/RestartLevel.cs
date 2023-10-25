@@ -15,8 +15,8 @@ public class RestartLevel : MonoBehaviour
     void Update()
     {
         if (Input.GetKeyDown("r")) {
-            SceneManager.LoadScene("Level1");
-            Debug.Log("Scene is reloaded.");
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            
         }
     }
 }

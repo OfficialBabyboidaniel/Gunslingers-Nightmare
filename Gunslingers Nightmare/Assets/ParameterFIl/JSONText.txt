@@ -1,13 +1,13 @@
 {
     "player": [
         {
-            "TimeBetweenFiring": 0.3
+            "TimeBetweenFiring": 2
         }
     ],
     "enemy": [
         {
             "EnemyAttackDmg": 10,
-            "EnemyAttackDelay": 3,
+            "EnemyAttackDelay": 2,
             "EnemyMovementSpeed": 1 
         }
     ],
