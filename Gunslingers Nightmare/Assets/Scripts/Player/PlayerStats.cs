@@ -21,9 +21,9 @@ public class PlayerStats : MonoBehaviour
 
         if (playerHP <= 0 && !isDead)
         {
-            // audio source is disabled bug?? fattar inte. make no sense 
+            
             Debug.Log("player is dead");
-            //audioSource.PlayOneShot(DeathClip);
+            audioSource.PlayOneShot(DeathClip);
 
             Renderer renderer = GetComponent<Renderer>();
             if (renderer != null)

@@ -19,8 +19,7 @@ public class AIDeath : State
     }
 
     public override void StateUpdate()
-    {
-        Debug.Log(audioSource.isActiveAndEnabled);
+    {    
         if (!hasPlayedDeathSound)
         {
             hasPlayedDeathSound = true;
