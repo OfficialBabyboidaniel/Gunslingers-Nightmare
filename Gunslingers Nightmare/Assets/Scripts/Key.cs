@@ -35,6 +35,7 @@ public class Key : MonoBehaviour
             // Debug.Log("Key");
             source.PlayOneShot(pickUpSound);
             ladderScript.keyFound = true;
+            Debug.Log("Picked up key");
             Destroy(gameObject);
         }
     }
