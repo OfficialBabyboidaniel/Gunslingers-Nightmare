@@ -1913,6 +1913,11 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 563636286}
   m_CullTransparentMesh: 1
+--- !u!1 &566182149 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 106180394, guid: 87a1d0e3c52dc4a4cb9613f1edb46501, type: 3}
+  m_PrefabInstance: {fileID: 1310007911}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &583796172
 GameObject:
   m_ObjectHideFlags: 0
@@ -6674,9 +6679,17 @@ PrefabInstance:
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 607183781383617970, guid: ace838098ac1fce43b286b193f7d415a, type: 3}
+      propertyPath: WallSource
+      value: 
+      objectReference: {fileID: 566182149}
+    - target: {fileID: 607183781383617970, guid: ace838098ac1fce43b286b193f7d415a, type: 3}
       propertyPath: PlayerInGame
       value: 
       objectReference: {fileID: 1576116064}
+    - target: {fileID: 607183781383617970, guid: ace838098ac1fce43b286b193f7d415a, type: 3}
+      propertyPath: DialogueSource
+      value: 
+      objectReference: {fileID: 250455223}
     - target: {fileID: 607183781383617971, guid: ace838098ac1fce43b286b193f7d415a, type: 3}
       propertyPath: m_RootOrder
       value: 13
