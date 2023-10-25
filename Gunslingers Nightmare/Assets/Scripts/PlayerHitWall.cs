@@ -17,9 +17,10 @@ public class PlayerHitWall : MonoBehaviour
     private bool playNextClip;
     private float wallTimer;
 
-    [SerializeField] public bool playSound = true;
+    public bool playSound = true;
 
-    [SerializeField] public bool playSoundContinues = true;
+    public bool playSoundContinues = true;
+
 
     void Start() {
         source = soundObject.GetComponent<AudioSource>();
