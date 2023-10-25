@@ -32,10 +32,9 @@ public class Key : MonoBehaviour
     void OnTriggerEnter2D(Collider2D col)
     {
         if (col.gameObject.CompareTag("Player")) {
-            // Debug.Log("Key");
             source.PlayOneShot(pickUpSound);
             ladderScript.keyFound = true;
-            Debug.Log("Picked up key");
+            Debug.LogError("Picked up key");
             Destroy(gameObject);
         }
     }
