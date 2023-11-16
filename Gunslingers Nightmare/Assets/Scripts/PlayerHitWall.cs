@@ -10,6 +10,7 @@ public class PlayerHitWall : MonoBehaviour
     [SerializeField] private GameObject soundObject;
     private AudioSource source;
     [SerializeField] private AudioClip hitClip;
+    [SerializeField] private AudioClip hitClipLoop;
 
     [SerializeField] private float buffer = 0.3f;
 
@@ -48,7 +49,7 @@ public class PlayerHitWall : MonoBehaviour
 
     void OnCollisionStay2D(Collision2D collision) {
         if (collision.gameObject.CompareTag("Wall") && rb.velocity.magnitude > 1.0f && playNextClip && playSound && playSoundContinues) {
-            source.PlayOneShot(hitClip);
+            source.PlayOneShot(hitClipLoop);
             playNextClip = false;
         }
     }
