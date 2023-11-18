@@ -1,12 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using SteamAudio;
+using System.IO;
 using UnityEngine;
+using System;
 
 public class JSONReader : MonoBehaviour
 {
     // Start is called before the first frame update
-    public TextAsset JSONText;
-
+    private TextAsset JSONText;
+    string filePath = "JSONText.txt";
     public GameObject PlayerInGame;
 
     public List<GameObject> Enemys = new List<GameObject>();
@@ -50,6 +53,8 @@ public class JSONReader : MonoBehaviour
 
     void Start()
     {
+
+        LoadTextFileIntoTextAssetMethod("JSONText.txt", "Build");
         datas = JsonUtility.FromJson<Datas>(JSONText.text);
         PlayerInGame.GetComponent<PlayerStats>().timeBetweenFiring = datas.player[0].TimeBetweenFiring;
 
@@ -76,9 +81,33 @@ public class JSONReader : MonoBehaviour
         PlayerInGame.GetComponent<PlayerHitWall>().playSoundContinues = datas.level[0].ContinueWallHitSound;
     }
 
-    // Update is called once per frame
-    void Update()
+    void LoadTextFileIntoTextAssetMethod(string fileName, string folderPath)
     {
+        try
+        {
+            // Use Path.Combine to create the full path
+            string fullPath = Path.GetFullPath("../Build/JSONText.txt");
 
+            // Debug.Log("correct file path: " + "C:\Users\danie\OneDrive\Documents\GitHub\Gunslingers-Nightmare\Gunslingers Nightmare\Build");
+            if (File.Exists(fullPath))
+            {
+                string fileContent = File.ReadAllText(fullPath);
+                // ... rest of your code
+                JSONText = new TextAsset(fileContent);
+            }
+            else
+            {
+                Debug.LogError("File not found at path: " + fullPath);
+            }
+
+            // Create a new TextAsset and assign the file content
+
+            // Debug.Log("TextAsset loaded from file: " + fullPath);
+        }
+        catch (Exception e)
+        {
+            Debug.LogError("Error loading TextAsset from file: " + e.Message);
+        }
     }
+
 }
