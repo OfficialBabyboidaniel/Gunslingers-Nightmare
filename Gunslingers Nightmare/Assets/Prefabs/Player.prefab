@@ -557,6 +557,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   soundObject: {fileID: 106180394}
   hitClip: {fileID: 8300000, guid: 92d3449bf6cca614cac762e35124c00a, type: 3}
+  hitClipLoop: {fileID: 8300000, guid: 8eda5820f136fb54997042ea12b574b1, type: 3}
   buffer: 0.3
   playSound: 1
   playSoundContinues: 1
