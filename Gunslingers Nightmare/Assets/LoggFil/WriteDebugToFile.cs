@@ -22,7 +22,7 @@ public class WriteDebugToFile : MonoBehaviour
     void Start()
     {
       //  Debug.unityLogger.logEnabled = false;
-        filename = "Assets/Logs/LogFile.txt";
+        filename = "../Build/Logfile.txt";
         playsession = PlayerPrefs.GetInt("PlaySession", 0);
         IncrementPlaySession(); // Increment playsession when the game starts
     }
