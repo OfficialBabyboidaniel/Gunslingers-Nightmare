@@ -9,7 +9,7 @@ public class JSONReader : MonoBehaviour
 {
     // Start is called before the first frame update
     private TextAsset JSONText;
-    string filePath = "JSONText.txt";
+    //string filePath = "JSONText.txt";
     public GameObject PlayerInGame;
 
     public List<GameObject> Enemys = new List<GameObject>();
